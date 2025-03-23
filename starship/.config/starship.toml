@@ -1,0 +1,151 @@
+format = """
+$os\
+$username\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$golang\
+$java\
+$python\
+$ruby\
+$rust\
+$lua\
+$docker_context\
+$time\
+$custom\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$status\
+$shell\
+$character"""
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[username]
+show_always = true
+format = '[$user]($style)'
+disabled = false
+
+[hostname]
+ssh_only = false
+format =  "[@$hostname ]($style)"
+disabled = false
+
+[directory]
+format = "[ $path ]($style)"
+truncation_length = 200
+truncation_symbol = "../"
+
+[directory.substitutions]
+Documents = "󰈙"
+Downloads = " "
+Music = " "
+Pictures = " "
+
+[git_branch]
+symbol = ""
+always_show_remote = true
+format = '[on $symbol $branch ]($style)'
+
+[git_commit]
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
+
+[git_metrics]
+# style = "bg:#FF7F7F"
+
+[git_status]
+format = '[$all_status$ahead_behind ]($style)'
+up_to_date = "✓"
+untracked = '?\($count\)'
+stashed = '[$]'
+modified = '!\($count\)'
+renamed = '»\($count\)'
+deleted = '✘\($count\)'
+staged = '++\($count\)'
+ahead = '⇡\(${count}\)'
+diverged = '⇕[\[][⇡\(${ahead_count}\)][⇣\(${behind_count}\)][\]]'
+behind = '⇣\(${count}\)'
+
+[package]
+format = '[ $symbol$version ]($style)'
+
+[golang]
+symbol = ""
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+pyenv_version_name = false
+symbol = ""
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+format = '[ $symbol ($version) ]($style)'
+
+[ruby]
+format = '[ $symbol ($version) ]($style)'
+
+[lua]
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+format = "[ $symbol$context ]($style)"
+
+[memory_usage]
+disabled = false
+threshold = -1
+format = '[ ${ram} ]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+format = '[ $time ]($style)'
+# time_format = "%T"
+utc_time_offset = "-3"
+
+[cmd_duration]
+style = "bold blue"
+
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+empty_symbol = "💀 "
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 50
+style = "bold purple"
+
+[[battery.display]]
+threshold = 100
+style = "bold green"
+
+[os]
+disabled = false
+format = "$symbol "
+symbols.Macos = ""
+symbols.EndeavourOS = ""
+
+[shell]
+fish_indicator = ""
+disabled = false
+
+[character]
+success_symbol = "[λ](bold green)"
+error_symbol = "[λ](bold red)"
+
+# palette tables should be last in the config ⚓️

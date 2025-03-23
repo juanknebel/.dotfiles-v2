@@ -1,0 +1,40 @@
+import = ["/home/zero/.config/alacritty/themes/themes/tokyo-night.toml"]
+live_config_reload = true
+
+[env]
+TERM = "screen-256color"
+
+[font]
+size = 6.0
+
+[font.bold]
+family = "MesloLGS Nerd Font Mono"
+
+[font.bold_italic]
+family = "MesloLGS Nerd Font Mono"
+
+[font.italic]
+family = "MesloLGS Nerd Font Mono"
+
+[font.normal]
+family = "MesloLGS Nerd Font Mono"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[shell]
+program = "/usr/bin/fish"
+
+[window]
+title = "Juan's Terminal"
+startup_mode = "Maximized"
+dynamic_title = true
+
+[cursor]
+style = "Block"
+vi_mode_style = "Beam"
